@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"errors"
+	"fmt"
 )
 
 func GetDefaultAK() string {
@@ -28,7 +29,7 @@ func requestGaode(reqType, reqURL string) (interface{}, error) {
 	if err != nil {
 		return res, err
 	}
-
+	fmt.Println(resp.Body)
 	defer resp.Body.Close()
 
 	bytes, _ := ioutil.ReadAll(resp.Body)
