@@ -14,10 +14,10 @@ type StructResult struct {
 }
 
 type StructRoutes struct {
-		Distance string `json:"distance"`
-		Duration string `json:"duration"`
-		Toll string `json:"tolls"`
-		Steps []*StructSteps `json:"steps"`
+	Distance string `json:"distance"`
+	Duration string `json:"duration"`
+	Toll string `json:"tolls"`
+	Steps []*StructSteps `json:"steps"`
 }
 
 type StructSteps struct {
