@@ -37,21 +37,3 @@ func (ac *GaodeMapClient) GetRoute(lat1, lng1, lat2, lng2 string) (*StructRoute,
 	res3 := res2.(*StructRoute)
 	return res3, nil
 }
-
-func (ac *GaodeMapClient) GetAddressViaGEO(lat, lng string) (*StructGEOToAddress, error) {
-	res := new(StructGEOToAddress)
-
-	parameter := fmt.Sprintf("%s&output=JSON&location=%s,%s", ac.GetAk(), lng, lat)
-	reqURL := fmt.Sprintf("%s%s", reqURLForGEO, parameter)
-
-	res2, err := requestGaode("GetAddressViaGEO", reqURL)
-	if err != nil {
-		return res, err
-	}
-	if res2.(*StructGEOToAddress).Status != "1" {
-		message := fmt.Sprintf("require failed")
-		return res, errors.New(message)
-	}
-	res3 := res2.(*StructGEOToAddress)
-	return res3, nil
-}

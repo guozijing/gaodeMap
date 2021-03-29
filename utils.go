@@ -49,9 +49,6 @@ func requestGaode(reqType, reqURL string) (interface{}, error) {
 
 func getResStruct(reqType string) (interface{}, error) {
 	var res interface{}
-	if reqType == "GetAddressViaGEO" {
-		return new(StructGEOToAddress), nil
-	}
 	if reqType == "GetRoute" {
 		return new(StructRoute), nil
 	}

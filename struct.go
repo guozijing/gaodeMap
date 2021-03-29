@@ -23,13 +23,3 @@ type StructRoutes struct {
 type StructSteps struct {
 	Path string `json:"polyline"`
 }
-
-// StructGEOToAddress
-type StructGEOToAddress struct {
-	Status string `json:"status"`
-	Regeocode struct {
-		AddressComponent struct {
-			Country  string `json:"country"`
-		} `json:"addressComponent"`
-	} `json:"regeocode"`
-}
