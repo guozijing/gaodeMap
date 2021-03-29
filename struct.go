@@ -2,7 +2,7 @@ package gaodeMap
 
 // get the route
 type StructRoute struct {
-	Status int64 `json:"status"`
+	Status string `json:"status"`
 	Message string `json:"info"`
 	Result *StructResult `json:"route"`
 }
@@ -14,9 +14,9 @@ type StructResult struct {
 }
 
 type StructRoutes struct {
-		Distance float64 `json:"distance"`
-		Duration float64 `json:"duration"`
-		Toll int64 `json:"tolls"`
+		Distance string `json:"distance"`
+		Duration string `json:"duration"`
+		Toll string `json:"tolls"`
 		Steps []*StructSteps `json:"steps"`
 }
 
@@ -26,7 +26,7 @@ type StructSteps struct {
 
 // StructGEOToAddress
 type StructGEOToAddress struct {
-	Status int64 `json:"status"`
+	Status string `json:"status"`
 	Regeocode struct {
 		AddressComponent struct {
 			Country  string `json:"country"`

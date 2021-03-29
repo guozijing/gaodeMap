@@ -30,7 +30,7 @@ func (ac *GaodeMapClient) GetRoute(lat1, lng1, lat2, lng2 string) (*StructRoute,
 	if err != nil {
 		return res, err
 	}
-	if res2.(*StructRoute).Status != 0 {
+	if res2.(*StructRoute).Status != "1" {
 		message := fmt.Sprintf("error：%s", res2.(*StructRoute).Message)
 		return res, errors.New(message)
 	}
@@ -48,7 +48,7 @@ func (ac *GaodeMapClient) GetAddressViaGEO(lat, lng string) (*StructGEOToAddress
 	if err != nil {
 		return res, err
 	}
-	if res2.(*StructGEOToAddress).Status != 0 {
+	if res2.(*StructGEOToAddress).Status != "1" {
 		message := fmt.Sprintf("require failed")
 		return res, errors.New(message)
 	}
